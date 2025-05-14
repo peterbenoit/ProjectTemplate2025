@@ -12,7 +12,7 @@ A modern project template to kickstart your next project in 2025.
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/ProjectTemplate2025.git
+    git clone https://github.com/peterbenoit/ProjectTemplate2025.git
     ```
 2. Explore the `docs/` folder for project outlines and AI prompts.
 3. Use scripts in `scripts/` to automate tasks.
@@ -24,10 +24,23 @@ ProjectTemplate2025/
 ├── README.md
 ├── docs/
 │   ├── ai.prompt.md
+│   ├── segment.01.md
 │   └── project.outline.md
 └── scripts/
     └── project-dump.js
 ```
+
+## File Definitions
+
+### docs/
+
+-   **ai.prompt.md**: Contains example AI prompts or instructions for leveraging AI tools in your project.
+-   **segment.01.md**: A segment or chapter of project documentation, useful for breaking down large docs into manageable parts.
+-   **project.outline.md**: The main outline or roadmap for the project, summarizing goals, milestones, and structure.
+
+### scripts/
+
+-   **project-dump.js**: Example script for automating project-related tasks, such as exporting or summarizing project data; used for passing project files/folders to ChatGPT for evaluation.
 
 ## Contributing
 

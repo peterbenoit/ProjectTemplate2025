@@ -17,6 +17,7 @@ This tool provides a web-based UI for searching available domain names using the
 -   Throttled API requests to avoid rate limiting
 -   Output of available domains in the UI
 -   Optional download/export of results (CSV/JSON)
+-   Light testing coverage included in each segment to validate logic (e.g., TLD filtering, domain generation)
 
 ## Stack
 
@@ -30,6 +31,7 @@ This tool provides a web-based UI for searching available domain names using the
 -   Allow rapid exploration of short, brandable domains
 -   Provide an interface that prioritizes speed and configurability
 -   Respect API usage limits to avoid IP bans or throttling
+-   Establish a habit of embedding test logic early in development, using assertions, test files, or script-level checks as needed
 
 ## Rules and Risks
 
@@ -48,6 +50,7 @@ This tool provides a web-based UI for searching available domain names using the
 -   Include clear API usage settings in the UI (e.g., delay per request, batch size).
 -   Warn users when queries exceed safe usage thresholds.
 -   Consider caching recent results locally to reduce redundant API calls.
+-   Define and execute basic test assertions to catch logic regressions early in each implementation phase
 
 ## Future Enhancements
 

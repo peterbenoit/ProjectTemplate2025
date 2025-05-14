@@ -46,6 +46,9 @@ This entire prompt is IMPORTANT. Read it carefully.
 -   When requesting clarification, suggest possible approaches
 -   Test all functionality before considering a segment complete
 -   Use `console.log` for debugging, remove before final submission
+-   Add basic test assertions or checks in each segment where logic is implemented (e.g., filters, generators, request logic)
+-   Prefer lightweight, embedded test cases unless full test harness is warranted
+-   Validate core utilities before integration using script-level checks or `__tests__` files
 
 ### INSTRUCTIONS
 
