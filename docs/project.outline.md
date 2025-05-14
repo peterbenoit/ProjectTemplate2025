@@ -1,4 +1,4 @@
-# Project Outline: Porkbun Domain Search Tool
+# Project Outline: THIS IS A DEMO OF A PROJECT OUTLINE
 
 ## Overview
 

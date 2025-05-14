@@ -1,6 +1,14 @@
 const fs = require('fs');
 const path = require('path');
-const ignore = require('ignore');
+let ignore;
+
+try {
+	ignore = require('ignore');
+} catch (e) {
+	console.log('Module "ignore" not found. Installing...');
+	require('child_process').execSync('npm install ignore', { stdio: 'inherit' });
+	ignore = require('ignore');
+}
 
 // Load .gitignore rules
 const gitignorePath = path.join(__dirname, '.gitignore');
@@ -25,6 +33,7 @@ ig.add('README.md'); // Ignore the README file
 ig.add('LICENSE'); // Ignore the LICENSE file
 ig.add('package-lock.json'); // Ignore the package-lock.json file
 ig.add('node_modules'); // Ignore the node_modules directory
+ig.add('.next'); // Ignore the .next directory
 
 // Function to recursively get directory structure and file contents
 function getDirectoryStructure(dir, baseDir = dir) {
@@ -60,12 +69,13 @@ function getDirectoryStructure(dir, baseDir = dir) {
 }
 
 // Main function to write the directory structure to a file
-function writeDirectoryStructure(outputFile) {
-	const structure = getDirectoryStructure(__dirname);
+function writeDirectoryStructure() {
+	const projectRoot = path.resolve(__dirname, '..');
+	const structure = getDirectoryStructure(projectRoot);
+	const outputFile = path.join(__dirname, 'project-structure.json');
 	fs.writeFileSync(outputFile, JSON.stringify(structure, null, 2), 'utf8');
 	console.log(`Directory structure written to ${outputFile}`);
 }
 
 // Run the script
-const outputFile = path.join(__dirname, 'project-structure.json');
-writeDirectoryStructure(outputFile);
+writeDirectoryStructure();
