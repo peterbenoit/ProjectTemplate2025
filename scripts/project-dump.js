@@ -26,6 +26,9 @@ ig.add('*.jpeg'); // Ignore .jpeg files
 ig.add('*.gif'); // Ignore .gif files
 ig.add('*.svg'); // Ignore .svg files
 ig.add('*.webp'); // Ignore .webp files
+ig.add('*.avif'); // Ignore .avif files
+ig.add('*.webp'); // Ignore .webp files
+ig.add('.DS_Store'); // Ignore .DS_Store files
 ig.add('project-structure.json'); // Ignore the output file itself
 ig.add('project-dump.js'); // Ignore this script itself
 ig.add('docs'); // Ignore the docs directory
@@ -34,6 +37,14 @@ ig.add('LICENSE'); // Ignore the LICENSE file
 ig.add('package-lock.json'); // Ignore the package-lock.json file
 ig.add('node_modules'); // Ignore the node_modules directory
 ig.add('.next'); // Ignore the .next directory
+ig.add('.vercel'); // Ignore the .vercel directory
+ig.add('fonts'); // Ignore fonts directory
+ig.add('webfonts'); // Ignore webfonts directory
+ig.add('*.ttf'); // Ignore .ttf files
+ig.add('*.woff'); // Ignore .woff files
+ig.add('*.woff2'); // Ignore .woff2 files
+ig.add('*.otf'); // Ignore .otf files
+ig.add('*.eot'); // Ignore .eot files
 
 // Function to recursively get directory structure and file contents
 function getDirectoryStructure(dir, baseDir = dir) {
