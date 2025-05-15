@@ -45,6 +45,18 @@ ig.add('*.woff'); // Ignore .woff files
 ig.add('*.woff2'); // Ignore .woff2 files
 ig.add('*.otf'); // Ignore .otf files
 ig.add('*.eot'); // Ignore .eot files
+ig.add('coverage'); // Ignore coverage reports
+ig.add('dist'); // Ignore build output directory
+ig.add('build'); // Ignore alternative build output directory
+ig.add('.turbo'); // Ignore TurboRepo cache
+ig.add('.eslintcache'); // Ignore ESLint cache file
+ig.add('.env'); // Ignore environment variable files
+ig.add('.env.local');
+ig.add('.env.development');
+ig.add('.env.production');
+ig.add('.vscode'); // Ignore VSCode project settings
+ig.add('.idea'); // Ignore JetBrains IDE settings
+ig.add('*.log'); // Ignore all .log files
 
 // Function to recursively get directory structure and file contents
 function getDirectoryStructure(dir, baseDir = dir) {
