@@ -84,7 +84,7 @@ function writeDirectoryStructure() {
 	const projectRoot = path.resolve(__dirname, '..');
 	const structure = getDirectoryStructure(projectRoot);
 	const outputFile = path.join(__dirname, 'project-structure.json');
-	fs.writeFileSync(outputFile, JSON.stringify(structure, null, 2), 'utf8');
+	fs.writeFileSync(outputFile, JSON.stringify(structure), 'utf8');
 	console.log(`Directory structure written to ${outputFile}`);
 }
 
