@@ -1,4 +1,5 @@
 {
+    "root": true,
     "extends": ["eslint:recommended", "@vue/eslint-config-prettier", "plugin:vue/vue3-recommended"],
     "env": {
         "browser": true,

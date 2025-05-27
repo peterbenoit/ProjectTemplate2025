@@ -17,23 +17,23 @@ export const validationRules = {
 	},
 
 	email: value => {
-		if (!value) return true; // Allow empty if not required
+		if (!value) return true;
 		const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 		return emailRegex.test(value) || 'Please enter a valid email address';
 	},
 
 	minLength: min => value => {
-		if (!value) return true; // Allow empty if not required
+		if (!value) return true;
 		return value.length >= min || `Must be at least ${min} characters`;
 	},
 
 	maxLength: max => value => {
-		if (!value) return true; // Allow empty if not required
+		if (!value) return true;
 		return value.length <= max || `Must be no more than ${max} characters`;
 	},
 
 	url: value => {
-		if (!value) return true; // Allow empty if not required
+		if (!value) return true;
 		try {
 			new URL(value);
 			return true;
@@ -43,32 +43,32 @@ export const validationRules = {
 	},
 
 	phone: value => {
-		if (!value) return true; // Allow empty if not required
+		if (!value) return true;
 		const phoneRegex = /^[+]?[1-9][\d]{0,15}$/;
 		return phoneRegex.test(value.replace(/\s/g, '')) || 'Please enter a valid phone number';
 	},
 
 	number: value => {
-		if (!value) return true; // Allow empty if not required
+		if (!value) return true;
 		return !isNaN(value) || 'Must be a valid number';
 	},
 
 	min: minValue => value => {
-		if (!value) return true; // Allow empty if not required
+		if (!value) return true;
 		return Number(value) >= minValue || `Must be at least ${minValue}`;
 	},
 
 	max: maxValue => value => {
-		if (!value) return true; // Allow empty if not required
+		if (!value) return true;
 		return Number(value) <= maxValue || `Must be no more than ${maxValue}`;
 	},
 
 	match:
 		(otherField, fieldName = 'password') =>
-		value => {
-			if (!value) return true; // Allow empty if not required
-			return value === otherField || `Must match ${fieldName}`;
-		},
+			value => {
+				if (!value) return true;
+				return value === otherField || `Must match ${fieldName}`;
+			},
 
 	custom: (validator, message) => value => {
 		return validator(value) || message;
@@ -82,16 +82,13 @@ export const validationRules = {
  * @returns {Object} Form state and methods
  */
 export function useForm(initialValues = {}, rules = {}) {
-	// Form data
 	const formData = reactive({ ...initialValues });
 
-	// Validation state
 	const errors = reactive({});
 	const touched = reactive({});
 	const isSubmitting = ref(false);
 	const submitCount = ref(0);
 
-	// Computed properties
 	const isValid = computed(() => {
 		return Object.keys(errors).length === 0;
 	});
@@ -118,7 +115,6 @@ export function useForm(initialValues = {}, rules = {}) {
 			return true;
 		}
 
-		// Ensure rules is an array
 		const rulesArray = Array.isArray(fieldRules) ? fieldRules : [fieldRules];
 
 		for (const rule of rulesArray) {
@@ -175,7 +171,6 @@ export function useForm(initialValues = {}, rules = {}) {
 	const handleInput = (field, value) => {
 		formData[field] = value;
 
-		// Clear error when user starts typing
 		if (errors[field]) {
 			validateField(field);
 		}
@@ -185,12 +180,10 @@ export function useForm(initialValues = {}, rules = {}) {
 	 * Reset form to initial state
 	 */
 	const resetForm = () => {
-		// Reset form data
 		Object.keys(formData).forEach(key => {
 			formData[key] = initialValues[key] || '';
 		});
 
-		// Clear errors and touched state
 		Object.keys(errors).forEach(key => delete errors[key]);
 		Object.keys(touched).forEach(key => delete touched[key]);
 
@@ -240,12 +233,10 @@ export function useForm(initialValues = {}, rules = {}) {
 	const handleSubmit = async onSubmit => {
 		submitCount.value++;
 
-		// Mark all fields as touched
 		Object.keys(rules).forEach(field => {
 			touched[field] = true;
 		});
 
-		// Validate form
 		const isFormValid = validateForm();
 
 		if (!isFormValid) {
@@ -260,7 +251,6 @@ export function useForm(initialValues = {}, rules = {}) {
 		}
 	};
 
-	// Watch for changes in form data to validate touched fields
 	watch(
 		() => ({ ...formData }),
 		() => {
@@ -272,19 +262,16 @@ export function useForm(initialValues = {}, rules = {}) {
 	);
 
 	return {
-		// Form state
 		formData,
 		errors,
 		touched,
 		isSubmitting,
 		submitCount,
 
-		// Computed
 		isValid,
 		hasErrors,
 		touchedFields,
 
-		// Methods
 		validateField,
 		validateForm,
 		touchField,
