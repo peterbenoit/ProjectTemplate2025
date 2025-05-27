@@ -51,46 +51,72 @@ const filesToUpdate = [
 	{
 		path: 'package.json',
 		replacements: [
-			{ search: /project-template-2025/g, replace: 'PROJECT_NAME' },
-			{ search: 'Peter Benoit', replace: 'AUTHOR_NAME' },
-			{ search: 'https://github.com/peterbenoit/ProjectTemplate2025', replace: 'PROJECT_REPO' },
+			{ search: /\[PROJECT_NAME\]/g, replace: 'PROJECT_NAME' },
+			{ search: /\[PROJECT_DESCRIPTION\]/g, replace: 'PROJECT_DESCRIPTION' },
+			{ search: /\[PROJECT_KEYWORDS\]/g, replace: 'PROJECT_KEYWORDS' },
+			{ search: /\[PROJECT_AUTHOR\]/g, replace: 'AUTHOR_NAME' },
 		],
 	},
 	{
 		path: 'index.html',
 		replacements: [
-			{ search: /Peter Benoit/g, replace: 'AUTHOR_NAME' },
-			{ search: /https:\/\/project-template-2025\.vercel\.app\//g, replace: 'PROJECT_URL' },
-			{ search: /https:\/\/peterbenoit\.com/g, replace: 'AUTHOR_URL' },
-			{ search: /GA_MEASUREMENT_ID/g, replace: 'GA_ID' },
-			{ search: /GTM-XXXXXXX/g, replace: 'GTM_ID' },
+			{ search: /\[PROJECT_NAME\]/g, replace: 'PROJECT_NAME' },
+			{ search: /\[PROJECT_DESCRIPTION\]/g, replace: 'PROJECT_DESCRIPTION' },
+			{ search: /\[PROJECT_KEYWORDS\]/g, replace: 'PROJECT_KEYWORDS' },
+			{ search: /\[AUTHOR_NAME\]/g, replace: 'AUTHOR_NAME' },
+			{ search: /\[AUTHOR_URL\]/g, replace: 'AUTHOR_URL' },
+			{ search: /\[PROJECT_URL\]/g, replace: 'PROJECT_URL' },
+			{ search: /\[GA_MEASUREMENT_ID\]/g, replace: 'GA_MEASUREMENT_ID' },
+			{ search: /\[GTM_ID\]/g, replace: 'GTM_ID' },
+			{ search: /\[HEX_TILE_COLOR\]/g, replace: 'HEX_TILE_COLOR' },
+			{ search: /\[HEX_THEME_COLOR\]/g, replace: 'HEX_THEME_COLOR' },
+			{ search: /PROJECT_PROGRAMMING_LANGUAGE/g, replace: 'PROJECT_PROGRAMMING_LANGUAGE' },
+			{ search: /\[PROJECT_OPERATING_SYSTEM\]/g, replace: 'PROJECT_OPERATING_SYSTEM' },
+			{ search: /\[PROJECT_APPLICATION_CATEGORY\]/g, replace: 'PROJECT_APPLICATION_CATEGORY' },
 		],
 	},
 	{
 		path: 'sitemap.xml',
-		replacements: [{ search: /https:\/\/brickcitycreative\.com/g, replace: 'PROJECT_URL' }],
+		replacements: [
+			{ search: /\[PROJECT_URL\]/g, replace: 'PROJECT_URL' },
+			{ search: /\[PROJECT_NAME\]/g, replace: 'PROJECT_NAME' },
+		],
 	},
 	{
 		path: 'site.webmanifest',
 		replacements: [
-			{ search: 'Project Template 2025', replace: 'PROJECT_NAME' },
-			{ search: 'Modern Vue.js Template', replace: 'PROJECT_DESCRIPTION' },
+			{ search: /\[PROJECT_NAME\]/g, replace: 'PROJECT_NAME' },
+			{ search: /\[PROJECT_DESCRIPTION\]/g, replace: 'PROJECT_DESCRIPTION' },
+			{ search: /\[HEX_THEME_COLORS\]/g, replace: 'HEX_THEME_COLORS' },
+			{ search: /\[HEX_BACKGROUND_COLORS\]/g, replace: 'HEX_BACKGROUND_COLORS' },
 		],
 	},
 	{
-		path: 'public/js/console.js',
+		path: 'robots.txt',
 		replacements: [
-			{ search: /BRICK.*?CITY.*?CREATIVE/gi, replace: 'PROJECT_NAME' },
-			{ search: /BrickCity Creative.*?nationwide\./gs, replace: 'PROJECT_DESCRIPTION' },
-			{ search: /contact@brickcitycreative\.com/g, replace: 'AUTHOR_EMAIL' },
-			{ search: /Ocala.*?success\.',/gs, replace: '"Welcome to PROJECT_NAME!",' },
+			{ search: /\[PROJECT_URL\]/g, replace: 'PROJECT_URL' },
 		],
 	},
 	{
 		path: 'humans.txt',
 		replacements: [
-			{ search: /Peter Benoit/g, replace: 'AUTHOR_NAME' },
-			{ search: /https:\/\/peterbenoit\.com/g, replace: 'AUTHOR_URL' },
+			{ search: /\[AUTHOR_NAME\]/g, replace: 'AUTHOR_NAME' },
+			{ search: /\[AUTHOR_LOCATION\]/g, replace: 'AUTHOR_LOCATION' },
+			{ search: /\[PROJECT_TWITTER\]/g, replace: 'PROJECT_TWITTER' },
+			{ search: /\[PROJECT_INSTAGRAM\]/g, replace: 'PROJECT_INSTAGRAM' },
+			{ search: /\[PROJECT_NAME\]/g, replace: 'PROJECT_NAME' },
+		],
+	},
+	{
+		path: 'vite.config.js',
+		replacements: [
+			{ search: /\[PROJECT_NAME\]/g, replace: 'PROJECT_NAME' },
+		],
+	},
+	{
+		path: '.env.example',
+		replacements: [
+			{ search: /\[PROJECT_URL\]/g, replace: 'PROJECT_URL' },
 		],
 	},
 ];
@@ -105,9 +131,13 @@ async function main() {
 		const authorName = await question(`👤 Your name (default: "${defaultReplacements.AUTHOR_NAME}"): `);
 		const authorEmail = await question(`📧 Your email (default: "${defaultReplacements.AUTHOR_EMAIL}"): `);
 		const authorUrl = await question(`🌐 Your website URL (default: "${defaultReplacements.AUTHOR_URL}"): `);
+		const authorLocation = await question(`📍 Your location (default: "${defaultReplacements.AUTHOR_LOCATION}"): `);
 		const projectUrl = await question(`🔗 Project URL (default: "${defaultReplacements.PROJECT_URL}"): `);
 		const projectRepo = await question(`📂 GitHub repository URL (default: "${defaultReplacements.PROJECT_REPO}"): `);
-		const gaId = await question(`📊 Google Analytics ID (default: "${defaultReplacements.GA_ID}"): `);
+		const projectTwitter = await question(`🐦 Twitter handle (default: "${defaultReplacements.PROJECT_TWITTER}"): `);
+		const projectInstagram = await question(`📸 Instagram handle (default: "${defaultReplacements.PROJECT_INSTAGRAM}"): `);
+		const themeColor = await question(`🎨 Theme color hex (default: "${defaultReplacements.HEX_THEME_COLORS}"): `);
+		const gaId = await question(`📊 Google Analytics ID (default: "${defaultReplacements.GA_MEASUREMENT_ID}"): `);
 		const gtmId = await question(`🏷️  Google Tag Manager ID (default: "${defaultReplacements.GTM_ID}"): `);
 
 		console.log(`\n${colors.green}✨ Updating project files...${colors.reset}`);
@@ -116,12 +146,23 @@ async function main() {
 		const replacements = {
 			PROJECT_NAME: projectName || defaultReplacements.PROJECT_NAME,
 			PROJECT_DESCRIPTION: projectDescription || defaultReplacements.PROJECT_DESCRIPTION,
+			PROJECT_KEYWORDS: defaultReplacements.PROJECT_KEYWORDS,
 			AUTHOR_NAME: authorName || defaultReplacements.AUTHOR_NAME,
 			AUTHOR_EMAIL: authorEmail || defaultReplacements.AUTHOR_EMAIL,
 			AUTHOR_URL: authorUrl || defaultReplacements.AUTHOR_URL,
+			AUTHOR_LOCATION: authorLocation || defaultReplacements.AUTHOR_LOCATION,
 			PROJECT_URL: (projectUrl || defaultReplacements.PROJECT_URL).replace(/\/$/, '') + '/',
 			PROJECT_REPO: projectRepo || defaultReplacements.PROJECT_REPO,
-			GA_ID: gaId || defaultReplacements.GA_ID,
+			PROJECT_TWITTER: projectTwitter || defaultReplacements.PROJECT_TWITTER,
+			PROJECT_INSTAGRAM: projectInstagram || defaultReplacements.PROJECT_INSTAGRAM,
+			HEX_THEME_COLORS: themeColor || defaultReplacements.HEX_THEME_COLORS,
+			HEX_BACKGROUND_COLORS: defaultReplacements.HEX_BACKGROUND_COLORS,
+			HEX_TILE_COLOR: themeColor || defaultReplacements.HEX_THEME_COLORS,
+			HEX_THEME_COLOR: themeColor || defaultReplacements.HEX_THEME_COLORS,
+			PROJECT_PROGRAMMING_LANGUAGE: defaultReplacements.PROJECT_PROGRAMMING_LANGUAGE,
+			PROJECT_OPERATING_SYSTEM: defaultReplacements.PROJECT_OPERATING_SYSTEM,
+			PROJECT_APPLICATION_CATEGORY: defaultReplacements.PROJECT_APPLICATION_CATEGORY,
+			GA_MEASUREMENT_ID: gaId || defaultReplacements.GA_MEASUREMENT_ID,
 			GTM_ID: gtmId || defaultReplacements.GTM_ID,
 		};
 

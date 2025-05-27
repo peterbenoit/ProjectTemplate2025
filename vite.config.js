@@ -6,7 +6,7 @@ export default defineConfig({
 	root: '.',
 	publicDir: 'public',
 	// Set base URL for GitHub Pages deployment
-	base: process.env.NODE_ENV === 'production' ? '/ProjectTemplate2025/' : '/',
+	base: process.env.NODE_ENV === 'production' ? '/[PROJECT_NAME]/' : '/',
 	build: {
 		outDir: 'dist',
 		assetsDir: 'assets',

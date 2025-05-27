@@ -1,38 +1,82 @@
 [
-{
-  "search": "PROJECT_NAME",
-  "replace": "My Vue App"
-},
-{
-  "search": "PROJECT_DESCRIPTION",
-  "replace": "A modern Vue.js application"
-},
-{
-  "search": "AUTHOR_NAME",
-  "replace": "Developer"
-},
-{
-  "search": "AUTHOR_EMAIL",
-  "replace": "developer@example.com"
-},
-{
-  "search": "AUTHOR_URL",
-  "replace": "https://example.com"
-},
-{
-  "search": "PROJECT_URL",
-  "replace": "https://myapp.vercel.app/"
-},
-{
-  "search": "PROJECT_REPO",
-  "replace": "https://github.com/user/repo"
-},
-{
-  "search": "GA_ID",
-  "replace": "GA_MEASUREMENT_ID"
-},
-{
-  "search": "GTM_ID",
-  "replace": "GTM-XXXXXXX"
-}
+  {
+    "search": "AUTHOR_NAME",
+    "replace": "Developer Name"
+  },
+  {
+    "search": "AUTHOR_EMAIL",
+    "replace": "developer@example.com"
+  },
+  {
+    "search": "AUTHOR_URL",
+    "replace": "https://example.com"
+  },
+  {
+    "search": "AUTHOR_LOCATION",
+    "replace": "City, State, Country"
+  },
+  {
+    "search": "PROJECT_NAME",
+    "replace": "My Vue App"
+  },
+  {
+    "search": "PROJECT_DESCRIPTION",
+    "replace": "A modern Vue.js application"
+  },
+  {
+    "search": "PROJECT_KEYWORDS",
+    "replace": "vue, javascript, vite, pinia, vue-router, template, web development, spa, modern, 2025, starter"
+  },
+  {
+    "search": "PROJECT_PROGRAMMING_LANGUAGE",
+    "replace": "[\"JavaScript\", \"Vue.js\"]"
+  },
+  {
+    "search": "PROJECT_OPERATING_SYSTEM",
+    "replace": "Cross-platform"
+  },
+  {
+    "search": "PROJECT_APPLICATION_CATEGORY",
+    "replace": "DeveloperApplication"
+  },
+  {
+    "search": "PROJECT_TWITTER",
+    "replace": "project_twitter"
+  },
+  {
+    "search": "PROJECT_INSTAGRAM",
+    "replace": "project_instagram"
+  },
+  {
+    "search": "PROJECT_URL",
+    "replace": "https://myapp.vercel.app/"
+  },
+  {
+    "search": "PROJECT_REPO",
+    "replace": "https://github.com/user/repo"
+  },
+  {
+    "search": "HEX_THEME_COLORS",
+    "replace": "#42b883"
+  },
+  {
+    "search": "HEX_BACKGROUND_COLORS",
+    "replace": "#ffffff"
+  },
+  {
+    "search": "HEX_TILE_COLOR",
+    "replace": "#42b883"
+  },
+  {
+    "search": "HEX_THEME_COLOR",
+    "replace": "#42b883"
+  },
+  {
+    "search": "GA_MEASUREMENT_ID",
+    "replace": "GA_MEASUREMENT_ID"
+  },
+  {
+    "search": "GTM_ID",
+    "replace": "GTM-XXXXXXX"
+  }
 ]

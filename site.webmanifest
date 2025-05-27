@@ -1,6 +1,6 @@
 {
-    "name": "[NAME]",
-    "short_name": "[SHORT_NAME]",
+    "name": "[PROJECT_NAME]",
+    "short_name": "[PROJECT_DESCRIPTION]",
     "icons": [
         {
             "src": "icons/android-chrome-192x192.png",
@@ -13,7 +13,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "[MORE_HEX_COLORS]",
-    "background_color": "[MORE_HEX_COLORS]",
+    "theme_color": "[HEX_THEME_COLORS]",
+    "background_color": "[HEX_BACKGROUND_COLORS]",
     "display": "standalone"
 }

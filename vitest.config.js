@@ -7,7 +7,6 @@ export default defineConfig({
 		globals: true,
 		environment: 'jsdom',
 		setupFiles: ['./src/test/setup.js'],
-		// Prevent tests from hanging in CI
 		watch: false,
 		passWithNoTests: true,
 	},

@@ -1,18 +1,18 @@
-# Humans.txt - Learn about the team behind Brick City Creative
+# Humans.txt - Learn about the team behind [PROJECT_NAME]
 
 /* TEAM */
-Founder & Creative Director: Peter Benoit
-Location: Ocala, Florida, USA
-Twitter: @brickcitydev
-Instagram: @brickcitycreative
+Founder & Creative Director: [AUTHOR_NAME]
+Location: [AUTHOR_LOCATION]
+Twitter: @[PROJECT_TWITTER]
+Instagram: @[PROJECT_INSTAGRAM]
 
-/* THANKS */
+/* THANKS (update accordingly) */
 Google Fonts for the Outfit typeface
 Remix Icons for the beautiful iconset
 Formspree for form handling
 The open source community
 
-/* SITE */
+/* SITE (update accordingly) */
 Last update: 2025/05/27
 Language: English
 Doctype: HTML5

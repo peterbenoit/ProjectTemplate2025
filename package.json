@@ -1,7 +1,7 @@
 {
-    "name": "project-template-2025",
+    "name": "[PROJECT_NAME]",
     "version": "1.0.0",
-    "description": "A modern project template to kickstart your next project in 2025",
+    "description": "[PROJECT_DESCRIPTION]",
     "main": "index.js",
     "type": "module",
     "scripts": {
@@ -21,13 +21,8 @@
         "prepare": "command -v husky >/dev/null && husky install || echo 'Husky not installed'",
         "setup": "node scripts/project-setup.js"
     },
-    "keywords": [
-        "template",
-        "project",
-        "2025",
-        "starter"
-    ],
-    "author": "Peter Benoit",
+    "keywords": "[PROJECT_KEYWORDS]",
+    "author": "[PROJECT_AUTHOR]",
     "license": "MIT",
     "dependencies": {
         "pinia": "^2.1.0",

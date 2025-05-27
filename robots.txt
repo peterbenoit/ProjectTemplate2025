@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://brickcitycreative.com/sitemap.xml
+Sitemap: [PROJECT_URL]/sitemap.xml
 
 # Block access to development files
 Disallow: /.git/
