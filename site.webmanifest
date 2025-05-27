@@ -1,0 +1,19 @@
+{
+    "name": "[NAME]",
+    "short_name": "[SHORT_NAME]",
+    "icons": [
+        {
+            "src": "icons/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "[MORE_HEX_COLORS]",
+    "background_color": "[MORE_HEX_COLORS]",
+    "display": "standalone"
+}
