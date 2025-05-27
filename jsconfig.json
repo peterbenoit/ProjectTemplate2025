@@ -1,0 +1,29 @@
+{
+	"compilerOptions": {
+		"target": "ES2022",
+		"module": "ESNext",
+		"moduleResolution": "bundler",
+		"allowSyntheticDefaultImports": true,
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["./src/*"],
+			"@/components/*": ["./src/components/*"],
+			"@/utils/*": ["./src/utils/*"],
+			"@/composables/*": ["./src/composables/*"],
+			"@/stores/*": ["./src/stores/*"],
+			"@/views/*": ["./src/views/*"]
+		}
+	},
+	"include": [
+		"src/**/*",
+		"js/**/*",
+		"scripts/**/*",
+		"*.js",
+		"*.vue"
+	],
+	"exclude": [
+		"node_modules",
+		"dist",
+		"build"
+	]
+}

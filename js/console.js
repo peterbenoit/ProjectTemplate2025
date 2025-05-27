@@ -1,4 +1,5 @@
-console.log(`%c
+console.log(
+	`%c
 
 	██████╗ ██████╗ ██╗ ██████╗██╗  ██╗ ██████╗██╗████████╗██╗   ██╗
 	██╔══██╗██╔══██╗██║██╔════╝██║ ██╔╝██╔════╝██║╚══██╔══╝╚██╗ ██╔╝
@@ -16,22 +17,24 @@ console.log(`%c
 
 
 	Type window.about() to learn more about Brick City Creative.
-	`, 'color:#c04557;font-family:monospace;font-size:12px');
-
+	`,
+	'color:#c04557;font-family:monospace;font-size:12px'
+);
 
 window.about = function () {
 	const quotes = [
-		"Ocala: Where horse country meets opportunity.",
+		'Ocala: Where horse country meets opportunity.',
 		"The heart of Florida's horse country with a business-forward vision.",
-		"Ocala: Small-town charm with big-city possibilities.",
-		"Where tradition and innovation intersect in Marion County.",
-		"Ocala: A historic destination for modern enterprises.",
-		"The Brick City - Building business foundations since 1846.",
+		'Ocala: Small-town charm with big-city possibilities.',
+		'Where tradition and innovation intersect in Marion County.',
+		'Ocala: A historic destination for modern enterprises.',
+		'The Brick City - Building business foundations since 1846.',
 		"Marion County's hub for excellence and professional growth.",
-		"Ocala: Where southern hospitality powers business success.",
+		'Ocala: Where southern hospitality powers business success.',
 	];
 	const quote = quotes[Math.floor(Math.random() * quotes.length)];
-	console.log(`%c
+	console.log(
+		`%c
 
 	BrickCity Creative: Professional Design and Development Services
 
@@ -56,5 +59,7 @@ window.about = function () {
 
 	"${quote}"
 
-	  `, 'color:#1565c0;font-family:monospace;font-size:12px');
+	  `,
+		'color:#1565c0;font-family:monospace;font-size:12px'
+	);
 };

@@ -1,210 +1,28 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-        <title>[TITLE]</title>
-
-        <!-- Meta tags -->
-        <meta name="description" content="[DESCRIPTION]" />
-        <meta name="keywords" content="web design, agency, Ocala, Florida, creative, development" />
-        <meta name="author" content="Peter Benoit" />
-        <meta name="publisher" content="Peter Benoit" />
-
-        <!-- Author/Personal Site Link -->
-        <link rel="author" href="https://peterbenoit.com" />
-
-        <!-- Favicon and App Icons -->
-        <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png" />
-        <link rel="manifest" href="/site.webmanifest" />
-
-        <!-- NOTE: I don't know what these colors are -->
-        <link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#f97316" />
-        <meta name="msapplication-TileColor" content="#f97316" />
-        <meta name="theme-color" content="#050505" />
-
-        <!-- Open Graph tags -->
-        <meta property="og:title" content="[TITLE]" />
-        <meta property="og:description" content="[DESCRIPTION]" />
-        <meta property="og:image" content="[DOMAIN]/og-image.jpg" />
-        <meta property="og:url" content="[DOMAIN]" />
-        <meta property="og:type" content="website" />
-
-        <!-- Twitter Card -->
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@[TWITTER]" />
-        <meta name="twitter:title" content="[TITLE]" />
-        <meta name="twitter:description" content="[DESCRIPTION]" />
-        <meta name="twitter:image" content="[DOMAIN]/og-image.jpg" />
-
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
-            rel="stylesheet"
-        />
-
-        <!-- Remix Icons -->
-        <!-- NOTE: should be installed via NPM -->
-        <link
-            href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
-            rel="stylesheet"
-        />
-
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="css/styles.css" />
-
-        <!-- Humans.txt -->
-        <link type="text/plain" rel="author" href="/humans.txt" />
-
-        <!-- Motion tracking script -->
-        <script type="module" src="js/motion.js"></script>
-
-        <script type="application/ld+json">
-            {
-                "@context": "https://schema.org",
-                "@type": "WebSite",
-                "name": "[NAME]",
-                "url": "https://[DOMAIN]",
-                "author": {
-                    "@type": "Person",
-                    "name": "Peter Benoit",
-                    "url": "https://peterbenoit.com"
-                },
-                "publisher": {
-                    "@type": "Organization",
-                    "name": "[NAME]",
-                    "founder": {
-                        "@type": "Person",
-                        "name": "Peter Benoit",
-                        "url": "https://peterbenoit.com"
-                    }
-                }
-            }
-        </script>
-    </head>
-    <body>
-        <div class="container">
-            <div>
-                <h1>[TITLE]</h1>
-                <p class="tagline">[DESCRIPTION]</p>
-            </div>
-            <footer class="footer">
-                <div class="footer-content">
-                    <span>&copy; 2025 Brick City Creative</span>
-                    <span class="divider">•</span>
-                    <span>All Rights Reserved</span>
-                </div>
-            </footer>
-        </div>
-
-        <div id="success-modal" class="modal">
-            <div class="modal-content">
-                <div class="modal-icon">
-                    <i class="ri-check-line"></i>
-                </div>
-                <h3>Thank you!</h3>
-                <p>We'll notify <span id="submitted-email"></span> when we launch.</p>
-                <button id="modal-close" class="modal-button">Got it</button>
-            </div>
-        </div>
-
-        <script>
-            // Countdown Timer - Set your launch date here
-            const countdownDate = new Date('September 1, 2025 00:00:00').getTime();
-
-            function updateCountdown() {
-                const now = new Date().getTime();
-                const distance = countdownDate - now;
-
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                document.getElementById('days').innerText = days.toString().padStart(2, '0');
-                document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
-                document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
-                document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
-            }
-
-            // Update countdown every second
-            setInterval(updateCountdown, 1000);
-            updateCountdown();
-
-            // Modal functionality
-            const modal = document.getElementById('success-modal');
-            const modalClose = document.getElementById('modal-close');
-            const submittedEmailEl = document.getElementById('submitted-email');
-
-            function showModal(email) {
-                submittedEmailEl.textContent = email;
-                modal.classList.add('show');
-                // Add some subtle animation to the background
-                document.querySelectorAll('.bg-shapes .shape').forEach((shape) => {
-                    shape.style.transform = 'scale(1.1)';
-                    setTimeout(() => {
-                        shape.style.transform = '';
-                    }, 800);
-                });
-            }
-
-            function hideModal() {
-                modal.classList.remove('show');
-            }
-
-            modalClose.addEventListener('click', hideModal);
-
-            // Close modal if clicked outside content
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    hideModal();
-                }
-            });
-
-            // Handle form submission with Formspree
-            const form = document.querySelector('.newsletter-form');
-
-            form.addEventListener('submit', async function (e) {
-                e.preventDefault();
-                const email = this.querySelector('input[type="email"]').value;
-                const submitButton = this.querySelector('button[type="submit"]');
-
-                // Change button to loading state
-                const originalText = submitButton.textContent;
-                submitButton.textContent = '...';
-                submitButton.disabled = true;
-
-                try {
-                    const response = await fetch('https://formspree.io/f/mblodayn', {
-                        method: 'POST',
-                        body: new FormData(form),
-                        headers: {
-                            Accept: 'application/json',
-                        },
-                    });
-
-                    if (response.ok) {
-                        showModal(email);
-                        form.reset();
-                    } else {
-                        throw new Error('Form submission failed');
-                    }
-                } catch (error) {
-                    console.error('Error:', error);
-                    alert('Oops! There was a problem submitting your form.');
-                } finally {
-                    // Restore button
-                    submitButton.textContent = originalText;
-                    submitButton.disabled = false;
-                }
-            });
-        </script>
-        <script src="js/console.js"></script>
-        <script src="https://peterbenoit.com/js/badge.js" data-mode="tracker"></script>
-    </body>
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Project Template 2025</title>
+		<meta
+			name="description"
+			content="Modern Vue.js project template with all the essential tools for rapid development"
+		/>
+		<meta name="keywords" content="vue, javascript, vite, pinia, vue-router, template" />
+		<meta property="og:title" content="Project Template 2025" />
+		<meta
+			property="og:description"
+			content="Modern Vue.js project template with all the essential tools for rapid development"
+		/>
+		<meta property="og:type" content="website" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+		<link rel="manifest" href="/site.webmanifest" />
+	</head>
+	<body>
+		<div id="app"></div>
+		<script type="module" src="/src/main.js"></script>
+	</body>
 </html>

@@ -1,0 +1,22 @@
+# GitHub Pages Configuration
+# This file helps configure GitHub Pages deployment
+
+# Base URL for GitHub Pages (update with your repository name)
+# For https://username.github.io/repository-name/
+base: /ProjectTemplate2025/
+
+# Build output directory
+build_dir: dist
+
+# Custom domain (optional)
+# domain: your-custom-domain.com
+
+# Node.js version for GitHub Actions
+node_version: 18
+
+# Environment variables for GitHub Actions
+# Set these in your repository settings under Settings > Secrets and Variables > Actions
+env_vars:
+    - VITE_APP_NAME
+    - VITE_API_BASE_URL
+    - VITE_GOOGLE_ANALYTICS_ID

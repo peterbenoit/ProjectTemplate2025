@@ -19,7 +19,7 @@ function updateSitemapDate() {
 
 	try {
 		// Read the current sitemap
-		let sitemapContent = fs.readFileSync(sitemapPath, 'utf8');
+		const sitemapContent = fs.readFileSync(sitemapPath, 'utf8');
 
 		// Get current date in YYYY-MM-DD format
 		const currentDate = new Date().toISOString().split('T')[0];
@@ -34,7 +34,6 @@ function updateSitemapDate() {
 		fs.writeFileSync(sitemapPath, updatedContent, 'utf8');
 
 		console.log(`✅ Sitemap updated with date: ${currentDate}`);
-
 	} catch (error) {
 		console.error('❌ Error updating sitemap:', error.message);
 		process.exit(1);

@@ -1,0 +1,36 @@
+{
+    "extends": ["eslint:recommended", "@vue/eslint-config-prettier", "plugin:vue/vue3-recommended"],
+    "env": {
+        "browser": true,
+        "node": true,
+        "es2022": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 2022,
+        "sourceType": "module"
+    },
+    "rules": {
+        "indent": ["error", "tab"],
+        "quotes": ["error", "single"],
+        "semi": ["error", "always"],
+        "no-unused-vars": "warn",
+        "no-console": "off",
+        "prefer-const": "error",
+        "no-var": "error",
+        "vue/multi-word-component-names": "off",
+        "vue/no-unused-vars": "error",
+        "vue/html-indent": ["error", "tab"],
+        "vue/script-indent": ["error", "tab"],
+        "vue/max-attributes-per-line": "off",
+        "vue/singleline-html-element-content-newline": "off",
+        "no-useless-escape": "error",
+        "no-useless-catch": "error"
+    },
+    "globals": {
+        "defineProps": "readonly",
+        "defineEmits": "readonly",
+        "defineExpose": "readonly",
+        "withDefaults": "readonly"
+    },
+    "ignorePatterns": ["node_modules/", "dist/", "build/", "*.min.js"]
+}
