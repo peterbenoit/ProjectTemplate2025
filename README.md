@@ -9,20 +9,32 @@ A modern, production-ready Vue 3 template. **This is a template repository** - w
    - Create your new repository
    - **Note**: This creates a separate project, not a fork
 
-2. **Clone and install**
+2. **Clone and setup**
    ```bash
    git clone https://github.com/yourusername/your-new-repo.git
    cd your-new-repo
    npm install
    ```
 
-3. **Update configuration**
+3. **🎯 Run the setup script (Recommended)**
+   ```bash
+   npm run scripts/project-setup
+   ```
+   This interactive script will:
+   - Replace all template variables with your project details
+   - Update package.json, index.html, sitemap.xml, etc.
+   - Configure Google Analytics and tracking codes
+   - Customize console branding
+
+4. **Or manually update configuration**
    - Replace `GA_MEASUREMENT_ID` in `index.html` with your Google Analytics ID
    - Replace `GTM-XXXXXXX` in `index.html` with your Google Tag Manager ID
    - Update `sitemap.xml` with your domain
    - Update `site.webmanifest` with your app details
+   - Replace console branding in `public/js/console.js`
+   - Update meta tags in `index.html`
 
-4. **Start developing**
+5. **Start developing**
    ```bash
    npm run dev
    ```

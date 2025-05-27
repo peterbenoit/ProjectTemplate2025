@@ -1,0 +1,38 @@
+[
+{
+  "search": "PROJECT_NAME",
+  "replace": "My Vue App"
+},
+{
+  "search": "PROJECT_DESCRIPTION",
+  "replace": "A modern Vue.js application"
+},
+{
+  "search": "AUTHOR_NAME",
+  "replace": "Developer"
+},
+{
+  "search": "AUTHOR_EMAIL",
+  "replace": "developer@example.com"
+},
+{
+  "search": "AUTHOR_URL",
+  "replace": "https://example.com"
+},
+{
+  "search": "PROJECT_URL",
+  "replace": "https://myapp.vercel.app/"
+},
+{
+  "search": "PROJECT_REPO",
+  "replace": "https://github.com/user/repo"
+},
+{
+  "search": "GA_ID",
+  "replace": "GA_MEASUREMENT_ID"
+},
+{
+  "search": "GTM_ID",
+  "replace": "GTM-XXXXXXX"
+}
+]
