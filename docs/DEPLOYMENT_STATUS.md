@@ -46,36 +46,29 @@
 ✅ src/router/        # Vue Router
 ✅ src/utils/         # HTTP client & helpers
 ✅ src/test/          # Test files
-✅ public/            # Static assets
-✅ .github/workflows/ # CI/CD pipeline
+✅ public/            # Static assets (js, css, icons)
 ```
 
 ## 🚀 Ready to Deploy!
 
 ### Deployment Options:
 
-1. **GitHub Pages** (Recommended)
-
-    - Push to main branch
-    - Workflow will auto-deploy
-    - URL: `https://username.github.io/ProjectTemplate2025/`
+1. **Vercel** ✅ (Currently Active)
+    - Connected repository
+    - Auto-deploy on push
+    - Edge functions ready
+    - Custom domain support
 
 2. **Netlify**
-
     - Connect repository
     - Auto-deploy on push
     - Custom domain support
 
-3. **Vercel**
-    - Connect repository
-    - Auto-deploy on push
-    - Edge functions ready
-
 ## 🧑‍💻 Next Steps:
 
 1. **Customize the template** for your specific project
-2. **Update repository name** in `vite.config.js` base URL
-3. **Set environment variables** in deployment platform
+2. **Update domain references** in sitemap.xml and index.html
+3. **Replace Google Analytics IDs** with your actual tracking codes
 4. **Add your custom components** and views
 5. **Extend the HTTP client** as needed
 

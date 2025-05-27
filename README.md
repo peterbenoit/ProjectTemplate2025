@@ -237,8 +237,8 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 ## 📞 Support
 
-- Create an [issue](https://github.com/your-username/ProjectTemplate2025/issues) for bug reports
-- Start a [discussion](https://github.com/your-username/ProjectTemplate2025/discussions) for questions
+- Create an [issue](https://github.com/peterbenoit/ProjectTemplate2025/issues) for bug reports
+- Start a [discussion](https://github.com/peterbenoit/ProjectTemplate2025/discussions) for questions
 
 ---
 
