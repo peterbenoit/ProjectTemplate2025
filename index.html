@@ -5,6 +5,46 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 		<title>Project Template 2025 - Modern Vue.js Template</title>
 
+		<!-- Security Headers -->
+		<meta http-equiv="X-Content-Type-Options" content="nosniff" />
+		<meta http-equiv="X-Frame-Options" content="DENY" />
+		<meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+		<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+
+		<!-- Content Security Policy (adjust as needed) -->
+		<meta
+			http-equiv="Content-Security-Policy"
+			content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://peterbenoit.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com;"
+		/>
+
+		<!-- Google Analytics 4 -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag('js', new Date());
+			gtag('config', 'GA_MEASUREMENT_ID', {
+				page_title: document.title,
+				page_location: window.location.href,
+			});
+		</script>
+
+		<!-- Google Tag Manager -->
+		<script>
+			(function (w, d, s, l, i) {
+				w[l] = w[l] || [];
+				w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+				var f = d.getElementsByTagName(s)[0],
+					j = d.createElement(s),
+					dl = l != 'dataLayer' ? '&l=' + l : '';
+				j.async = true;
+				j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+				f.parentNode.insertBefore(j, f);
+			})(window, document, 'script', 'dataLayer', 'GTM-XXXXXXX');
+		</script>
+
 		<!-- Primary Meta Tags -->
 		<meta name="title" content="Project Template 2025 - Modern Vue.js Template" />
 		<meta
@@ -99,7 +139,40 @@
 		</script>
 	</head>
 	<body>
+		<!-- Google Tag Manager (noscript) -->
+		<noscript
+			><iframe
+				src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+				height="0"
+				width="0"
+				style="display: none; visibility: hidden"
+			></iframe
+		></noscript>
+
+		<!-- Cookie Consent Banner Placeholder -->
+		<div id="cookie-consent" style="display: none" aria-live="polite">
+			<!-- Cookie consent content will be loaded here -->
+		</div>
+
 		<div id="app"></div>
+
+		<!-- Error Boundary Script -->
+		<script>
+			window.addEventListener('error', function (e) {
+				gtag('event', 'exception', {
+					description: e.error ? e.error.toString() : e.message,
+					fatal: false,
+				});
+			});
+
+			window.addEventListener('unhandledrejection', function (e) {
+				gtag('event', 'exception', {
+					description: e.reason ? e.reason.toString() : 'Unhandled Promise Rejection',
+					fatal: false,
+				});
+			});
+		</script>
+
 		<script type="module" src="/src/main.js"></script>
 
 		<!-- Development Console Script -->
@@ -107,5 +180,19 @@
 
 		<!-- Badge.js tracker from original -->
 		<script src="https://peterbenoit.com/js/badge.js" data-mode="tracker"></script>
+
+		<!-- Accessibility Script -->
+		<script>
+			// Focus management for accessibility
+			document.addEventListener('DOMContentLoaded', function () {
+				// Skip to main content link
+				const skipLink = document.createElement('a');
+				skipLink.href = '#app';
+				skipLink.textContent = 'Skip to main content';
+				skipLink.className =
+					'sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 bg-blue-600 text-white p-2 z-50';
+				document.body.insertBefore(skipLink, document.body.firstChild);
+			});
+		</script>
 	</body>
 </html>
