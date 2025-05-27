@@ -1,4 +1,63 @@
-# Icon Generator Tool
+# Scripts Directory
+
+This directory contains utility scripts for project automation and build processes.
+
+## Available Scripts
+
+### update-sitemap.js
+
+Automatically updates the `lastmod` date in your sitemap.xml to the current date during the build process.
+
+#### Usage
+
+```bash
+node scripts/update-sitemap.js
+```
+
+#### Integration Examples
+
+**Vite:**
+
+```json
+{
+    "scripts": {
+        "build": "npm run update-sitemap && vite build"
+    }
+}
+```
+
+**Webpack:**
+
+```json
+{
+    "scripts": {
+        "build": "npm run update-sitemap && webpack --mode production"
+    }
+}
+```
+
+**Next.js:**
+
+```json
+{
+    "scripts": {
+        "build": "npm run update-sitemap && next build"
+    }
+}
+```
+
+#### Features
+
+-   ✅ Updates all `<lastmod>` dates in sitemap.xml
+-   ✅ Uses current date in YYYY-MM-DD format
+-   ✅ Works with any build tool
+-   ✅ Can be run manually or automatically
+-   ✅ Error handling and validation
+-   ✅ Cross-platform compatible
+
+---
+
+## Icon Generator Tool
 
 This Python script generates various website icon sizes from a source image, including options to create versions with transparent backgrounds.
 

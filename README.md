@@ -22,12 +22,17 @@ A modern project template to kickstart your next project in 2025.
 ```
 ProjectTemplate2025/
 ├── README.md
+├── package.json
+├── sitemap.xml
 ├── docs/
 │   ├── ai.prompt.md
 │   ├── segment.01.md
 │   └── project.outline.md
 └── scripts/
-    └── project-dump.js
+    ├── generate-icons.py
+    ├── project-dump.js
+    ├── update-sitemap.js
+    └── README.md
 ```
 
 ## File Definitions
@@ -40,7 +45,9 @@ ProjectTemplate2025/
 
 ### scripts/
 
+-   **generate-icons.py**: Python script for generating various website icon sizes from a source image, including transparent background options.
 -   **project-dump.js**: Example script for automating project-related tasks, such as exporting or summarizing project data; used for passing project files/folders to ChatGPT for evaluation.
+-   **update-sitemap.js**: Automatically updates the `lastmod` date in sitemap.xml to the current date during build processes. Works with any build tool (Vite, Webpack, Next.js, etc.).
 
 ## Contributing
 
