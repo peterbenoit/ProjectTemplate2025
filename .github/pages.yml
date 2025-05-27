@@ -1,8 +1,8 @@
 # GitHub Pages Configuration
 # This file helps configure GitHub Pages deployment
 
-# Base URL for GitHub Pages (update with your repository name)
-# For https://username.github.io/repository-name/
+# Base URL for GitHub Pages
+# For https://peterbenoit.github.io/ProjectTemplate2025/
 base: /ProjectTemplate2025/
 
 # Build output directory
