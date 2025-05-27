@@ -9,30 +9,30 @@ import { ref, reactive, computed, watch } from 'vue';
  * Form validation rules
  */
 export const validationRules = {
-	required: (value) => {
+	required: value => {
 		if (!value || (typeof value === 'string' && !value.trim())) {
 			return 'This field is required';
 		}
 		return true;
 	},
 
-	email: (value) => {
+	email: value => {
 		if (!value) return true; // Allow empty if not required
 		const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 		return emailRegex.test(value) || 'Please enter a valid email address';
 	},
 
-	minLength: (min) => (value) => {
+	minLength: min => value => {
 		if (!value) return true; // Allow empty if not required
 		return value.length >= min || `Must be at least ${min} characters`;
 	},
 
-	maxLength: (max) => (value) => {
+	maxLength: max => value => {
 		if (!value) return true; // Allow empty if not required
 		return value.length <= max || `Must be no more than ${max} characters`;
 	},
 
-	url: (value) => {
+	url: value => {
 		if (!value) return true; // Allow empty if not required
 		try {
 			new URL(value);
@@ -42,35 +42,35 @@ export const validationRules = {
 		}
 	},
 
-	phone: (value) => {
+	phone: value => {
 		if (!value) return true; // Allow empty if not required
 		const phoneRegex = /^[+]?[1-9][\d]{0,15}$/;
 		return phoneRegex.test(value.replace(/\s/g, '')) || 'Please enter a valid phone number';
 	},
 
-	number: (value) => {
+	number: value => {
 		if (!value) return true; // Allow empty if not required
 		return !isNaN(value) || 'Must be a valid number';
 	},
 
-	min: (minValue) => (value) => {
+	min: minValue => value => {
 		if (!value) return true; // Allow empty if not required
 		return Number(value) >= minValue || `Must be at least ${minValue}`;
 	},
 
-	max: (maxValue) => (value) => {
+	max: maxValue => value => {
 		if (!value) return true; // Allow empty if not required
 		return Number(value) <= maxValue || `Must be no more than ${maxValue}`;
 	},
 
 	match:
 		(otherField, fieldName = 'password') =>
-		(value) => {
+		value => {
 			if (!value) return true; // Allow empty if not required
 			return value === otherField || `Must match ${fieldName}`;
 		},
 
-	custom: (validator, message) => (value) => {
+	custom: (validator, message) => value => {
 		return validator(value) || message;
 	},
 };
@@ -97,11 +97,11 @@ export function useForm(initialValues = {}, rules = {}) {
 	});
 
 	const hasErrors = computed(() => {
-		return Object.keys(errors).some((field) => errors[field]);
+		return Object.keys(errors).some(field => errors[field]);
 	});
 
 	const touchedFields = computed(() => {
-		return Object.keys(touched).filter((field) => touched[field]);
+		return Object.keys(touched).filter(field => touched[field]);
 	});
 
 	/**
@@ -109,7 +109,7 @@ export function useForm(initialValues = {}, rules = {}) {
 	 * @param {string} field - Field name to validate
 	 * @returns {boolean} - True if valid, false if invalid
 	 */
-	const validateField = (field) => {
+	const validateField = field => {
 		const value = formData[field];
 		const fieldRules = rules[field];
 
@@ -154,7 +154,7 @@ export function useForm(initialValues = {}, rules = {}) {
 	 * Mark a field as touched
 	 * @param {string} field - Field name
 	 */
-	const touchField = (field) => {
+	const touchField = field => {
 		touched[field] = true;
 	};
 
@@ -162,7 +162,7 @@ export function useForm(initialValues = {}, rules = {}) {
 	 * Handle field blur event
 	 * @param {string} field - Field name
 	 */
-	const handleBlur = (field) => {
+	const handleBlur = field => {
 		touchField(field);
 		validateField(field);
 	};
@@ -186,13 +186,13 @@ export function useForm(initialValues = {}, rules = {}) {
 	 */
 	const resetForm = () => {
 		// Reset form data
-		Object.keys(formData).forEach((key) => {
+		Object.keys(formData).forEach(key => {
 			formData[key] = initialValues[key] || '';
 		});
 
 		// Clear errors and touched state
-		Object.keys(errors).forEach((key) => delete errors[key]);
-		Object.keys(touched).forEach((key) => delete touched[key]);
+		Object.keys(errors).forEach(key => delete errors[key]);
+		Object.keys(touched).forEach(key => delete touched[key]);
 
 		isSubmitting.value = false;
 		submitCount.value = 0;
@@ -202,7 +202,7 @@ export function useForm(initialValues = {}, rules = {}) {
 	 * Set form values
 	 * @param {Object} values - New form values
 	 */
-	const setValues = (values) => {
+	const setValues = values => {
 		Object.assign(formData, values);
 	};
 
@@ -228,7 +228,7 @@ export function useForm(initialValues = {}, rules = {}) {
 	 * Clear field error
 	 * @param {string} field - Field name
 	 */
-	const clearError = (field) => {
+	const clearError = field => {
 		delete errors[field];
 	};
 
@@ -237,11 +237,11 @@ export function useForm(initialValues = {}, rules = {}) {
 	 * @param {Function} onSubmit - Submit handler function
 	 * @returns {Promise} - Submit promise
 	 */
-	const handleSubmit = async (onSubmit) => {
+	const handleSubmit = async onSubmit => {
 		submitCount.value++;
 
 		// Mark all fields as touched
-		Object.keys(rules).forEach((field) => {
+		Object.keys(rules).forEach(field => {
 			touched[field] = true;
 		});
 
@@ -264,7 +264,7 @@ export function useForm(initialValues = {}, rules = {}) {
 	watch(
 		() => ({ ...formData }),
 		() => {
-			touchedFields.value.forEach((field) => {
+			touchedFields.value.forEach(field => {
 				validateField(field);
 			});
 		},
@@ -330,7 +330,7 @@ export function useField(name, initialValue = '', rules = []) {
 		validate();
 	};
 
-	const handleInput = (newValue) => {
+	const handleInput = newValue => {
 		value.value = newValue;
 		if (error.value) {
 			validate();

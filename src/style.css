@@ -7,7 +7,16 @@
 
 body {
 	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+	font-family:
+		'Outfit',
+		-apple-system,
+		BlinkMacSystemFont,
+		'Segoe UI',
+		Roboto,
+		Oxygen,
+		Ubuntu,
+		Cantarell,
+		sans-serif;
 	line-height: 1.6;
 	color: #333;
 	background-color: #fff;
@@ -15,13 +24,13 @@ body {
 
 /* CSS Custom Properties (Variables) */
 :root {
-	--primary-color: #3498db;
-	--secondary-color: #2c3e50;
+	--primary-color: #f97316;
+	--secondary-color: #050505;
 	--success-color: #27ae60;
 	--warning-color: #f39c12;
 	--danger-color: #e74c3c;
 	--light-color: #ecf0f1;
-	--dark-color: #2c3e50;
+	--dark-color: #050505;
 
 	--font-size-sm: 0.875rem;
 	--font-size-base: 1rem;
@@ -47,15 +56,28 @@ body {
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	margin: 0 0 var(--spacing-md) 0;
 	line-height: 1.2;
 }
 
-h1 { font-size: var(--font-size-3xl); }
-h2 { font-size: var(--font-size-2xl); }
-h3 { font-size: var(--font-size-xl); }
-h4 { font-size: var(--font-size-lg); }
+h1 {
+	font-size: var(--font-size-3xl);
+}
+h2 {
+	font-size: var(--font-size-2xl);
+}
+h3 {
+	font-size: var(--font-size-xl);
+}
+h4 {
+	font-size: var(--font-size-lg);
+}
 
 p {
 	margin: 0 0 var(--spacing-md) 0;
@@ -101,26 +123,60 @@ a:hover {
 }
 
 /* Utility Classes */
-.text-center { text-align: center; }
-.text-left { text-align: left; }
-.text-right { text-align: right; }
+.text-center {
+	text-align: center;
+}
+.text-left {
+	text-align: left;
+}
+.text-right {
+	text-align: right;
+}
 
-.mt-0 { margin-top: 0; }
-.mt-1 { margin-top: var(--spacing-xs); }
-.mt-2 { margin-top: var(--spacing-sm); }
-.mt-3 { margin-top: var(--spacing-md); }
-.mt-4 { margin-top: var(--spacing-lg); }
+.mt-0 {
+	margin-top: 0;
+}
+.mt-1 {
+	margin-top: var(--spacing-xs);
+}
+.mt-2 {
+	margin-top: var(--spacing-sm);
+}
+.mt-3 {
+	margin-top: var(--spacing-md);
+}
+.mt-4 {
+	margin-top: var(--spacing-lg);
+}
 
-.mb-0 { margin-bottom: 0; }
-.mb-1 { margin-bottom: var(--spacing-xs); }
-.mb-2 { margin-bottom: var(--spacing-sm); }
-.mb-3 { margin-bottom: var(--spacing-md); }
-.mb-4 { margin-bottom: var(--spacing-lg); }
+.mb-0 {
+	margin-bottom: 0;
+}
+.mb-1 {
+	margin-bottom: var(--spacing-xs);
+}
+.mb-2 {
+	margin-bottom: var(--spacing-sm);
+}
+.mb-3 {
+	margin-bottom: var(--spacing-md);
+}
+.mb-4 {
+	margin-bottom: var(--spacing-lg);
+}
 
-.p-1 { padding: var(--spacing-xs); }
-.p-2 { padding: var(--spacing-sm); }
-.p-3 { padding: var(--spacing-md); }
-.p-4 { padding: var(--spacing-lg); }
+.p-1 {
+	padding: var(--spacing-xs);
+}
+.p-2 {
+	padding: var(--spacing-sm);
+}
+.p-3 {
+	padding: var(--spacing-md);
+}
+.p-4 {
+	padding: var(--spacing-lg);
+}
 
 /* Layout */
 .container {
@@ -135,10 +191,18 @@ a:hover {
 	gap: var(--spacing-md);
 }
 
-.grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
-.grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
-.grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
-.grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+.grid-cols-1 {
+	grid-template-columns: repeat(1, 1fr);
+}
+.grid-cols-2 {
+	grid-template-columns: repeat(2, 1fr);
+}
+.grid-cols-3 {
+	grid-template-columns: repeat(3, 1fr);
+}
+.grid-cols-4 {
+	grid-template-columns: repeat(4, 1fr);
+}
 
 /* Responsive Breakpoints */
 @media (max-width: 768px) {
