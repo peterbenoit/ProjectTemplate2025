@@ -151,7 +151,8 @@ async function main() {
 			AUTHOR_EMAIL: authorEmail || defaultReplacements.AUTHOR_EMAIL,
 			AUTHOR_URL: authorUrl || defaultReplacements.AUTHOR_URL,
 			AUTHOR_LOCATION: authorLocation || defaultReplacements.AUTHOR_LOCATION,
-			PROJECT_URL: (projectUrl || defaultReplacements.PROJECT_URL).replace(/\/$/, '') + '/',
+			// Fix double slash issue by ensuring URL format is correct
+			PROJECT_URL: (projectUrl || defaultReplacements.PROJECT_URL).replace(/\/+$/, ''),
 			PROJECT_REPO: projectRepo || defaultReplacements.PROJECT_REPO,
 			PROJECT_TWITTER: projectTwitter || defaultReplacements.PROJECT_TWITTER,
 			PROJECT_INSTAGRAM: projectInstagram || defaultReplacements.PROJECT_INSTAGRAM,
@@ -186,11 +187,15 @@ async function main() {
 			console.log(`${colors.green}✅ Updated ${file.path}${colors.reset}`);
 		}
 
-		// Update package.json name to be URL-safe
+		// Update package.json name to be URL-safe and fix keywords array
 		const packagePath = path.join(projectRoot, 'package.json');
 		if (fs.existsSync(packagePath)) {
 			const packageJson = JSON.parse(fs.readFileSync(packagePath, 'utf8'));
 			packageJson.name = (replacements.PROJECT_NAME || 'my-vue-app').toLowerCase().replace(/[^a-z0-9]/g, '-');
+			// Convert keywords string to array
+			if (typeof packageJson.keywords === 'string') {
+				packageJson.keywords = packageJson.keywords.split(',').map(k => k.trim());
+			}
 			fs.writeFileSync(packagePath, JSON.stringify(packageJson, null, 2));
 		}
 

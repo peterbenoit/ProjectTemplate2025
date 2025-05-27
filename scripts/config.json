@@ -49,7 +49,7 @@
   },
   {
     "search": "PROJECT_URL",
-    "replace": "https://myapp.vercel.app/"
+    "replace": "https://myapp.vercel.app"
   },
   {
     "search": "PROJECT_REPO",

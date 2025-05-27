@@ -1,0 +1,7 @@
+ check to see if URL ends in slash:
+ Sitemap: https://myapp.vercel.app//sitemap.xml
+ <image:loc>https://myapp.vercel.app//icons/android-chrome-512x512.png</image:loc>
+
+
+keywords needs to be an array:
+"keywords": "vue, javascript, vite, pinia, vue-router, template, web development, spa, modern, 2025, starter",
