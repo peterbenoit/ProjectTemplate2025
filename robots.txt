@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://brickcitycreative.com/sitemap.xml
+
+# Block access to development files
+Disallow: /.git/
+Disallow: /README.md
+Disallow: /generate_icons.py
+Disallow: /vercel.json
+
+# Allow important files
+Allow: /favicon.ico
+Allow: /apple-touch-icon.png
+Allow: /og-image.jpg
+Allow: /site.webmanifest
+Allow: /browserconfig.xml
+Allow: /styles.css
+Allow: /motion.js
