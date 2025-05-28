@@ -84,16 +84,6 @@ async function main() {
 		copyRecursive(projectRoot, testDir);
 		console.log(`${colors.green}✅ Copied template files to test directory${colors.reset}`);
 
-		// Initialize new git repository (simulate GitHub template creation)
-		process.chdir(testDir);
-		execSync('git init', { stdio: 'pipe' });
-		console.log(`${colors.green}✅ Initialized new git repository${colors.reset}`);
-
-		// Create initial commit (what GitHub does)
-		execSync('git add .', { stdio: 'pipe' });
-		execSync('git commit -m "Initial commit from template"', { stdio: 'pipe' });
-		console.log(`${colors.green}✅ Created initial commit${colors.reset}`);
-
 		console.log(`\n${colors.bright}${colors.green}🎉 Template test setup complete!${colors.reset}`);
 		console.log(`\n${colors.blue}Test directory created at:${colors.reset}`);
 		console.log(`${colors.cyan}${testDir}${colors.reset}`);
@@ -103,6 +93,8 @@ async function main() {
 		console.log(`2. ${colors.cyan}npm install${colors.reset}`);
 		console.log(`3. ${colors.cyan}npm run setup${colors.reset} (test the setup script)`);
 		console.log(`4. ${colors.cyan}npm run dev${colors.reset} (test the development server)`);
+		console.log(`5. ${colors.cyan}npm run test${colors.reset} (test the unit tests)`);
+		console.log(`6. ${colors.cyan}rm -rf ../test-template-project${colors.reset} (remove the test directory when done)`);
 
 		console.log(`\n${colors.yellow}💡 Tip: You can run this test multiple times to verify the template works correctly${colors.reset}`);
 
