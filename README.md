@@ -1,82 +1,132 @@
 # Vue 3 Project Template 2025
 
-A modern, production-ready Vue 3 template.
+A modern, production-ready Vue 3 template with comprehensive tooling and automated setup.
 
 ## 🚀 Quick Start
 
-1. **Use this template** (creates a new independent repository)
-   - Click "Use this template" button above
-   - Create your new repository
-   - **Note**: This creates a separate project, not a fork
+### 1. Use This Template
+- Click the "Use this template" button above
+- Create your new repository
+- **Note**: This creates a separate project, not a fork
 
-2. **Clone and setup**
-   ```bash
-   git clone https://github.com/yourusername/your-new-repo.git
-   cd your-new-repo
-   npm install
-   ```
+### 2. Clone and Install
+```bash
+git clone https://github.com/yourusername/your-new-repo.git
+cd your-new-repo
+npm install
+```
 
-3. **🎯 Run the setup script (Recommended)**
-   ```bash
-   npm run scripts/project-setup
-   ```
-   This interactive script will:
-   - Replace all template variables with your project details
-   - Update package.json, index.html, sitemap.xml, etc.
-   - Configure Google Analytics and tracking codes
-   - Customize console branding
+### 3. Automated Setup (Recommended) 🎯
+```bash
+npm run setup
+```
 
-4. **Or manually update configuration**
-   - Replace `GA_MEASUREMENT_ID` in `index.html` with your Google Analytics ID
-   - Replace `GTM-XXXXXXX` in `index.html` with your Google Tag Manager ID
-   - Update `sitemap.xml` with your domain
-   - Update `site.webmanifest` with your app details
-   - Replace console branding in `public/js/console.js`
-   - Update meta tags in `index.html`
+This interactive script will:
+- Replace all template variables with your project details
+- Update package.json, index.html, sitemap.xml, and all config files
+- Configure Google Analytics and tracking codes
+- Customize console branding and meta tags
+- Convert package.json keywords to proper array format
 
-5. **Start developing**
-   ```bash
-   npm run dev
-   ```
+### 4. Start Developing
+```bash
+npm run dev
+```
 
 ## 📁 What's Included
 
-- Vue 3 + Composition API
-- Vue Router 4
-- Pinia state management
-- Vite build system
-- Vitest testing
-- ESLint + Prettier
-- Deployment configs for Vercel/Netlify
+### Core Framework
+- **Vue 3** with Composition API
+- **Vue Router 4** for routing
+- **Pinia** for state management
+- **Vite** for lightning-fast builds
 
-## 🔧 Customization Checklist
+### Development Tools
+- **ESLint + Prettier** with consistent formatting
+- **Vitest** for testing with 8 example tests
+- **Husky** git hooks for code quality
+- **Hot Module Replacement** for instant updates
 
-- [ ] Update `package.json` name and description
-- [ ] Replace Google Analytics/GTM IDs
-- [ ] Update `sitemap.xml` domain
-- [ ] Customize `site.webmanifest`
-- [ ] Replace console branding in `public/js/console.js`
-- [ ] Update meta tags in `index.html`
+### Production Ready
+- **SEO optimized** with meta tags, sitemap, robots.txt
+- **PWA ready** with web manifest
+- **Google Analytics & GTM** integration
+- **Security headers** and CSP configuration
+- **Performance optimized** builds
+
+### Template Features
+- **Automated variable replacement** system
+- **Local testing** with `npm run test:template`
+- **Comprehensive configuration** files
+- **Example components** and composables
+
+## 🔧 Template Variables
+
+The template uses bracketed variables like `[PROJECT_NAME]` that get replaced during setup:
+
+- `[PROJECT_NAME]` - Your project name
+- `[PROJECT_DESCRIPTION]` - Project description
+- `[AUTHOR_NAME]` - Your name
+- `[AUTHOR_EMAIL]` - Your email
+- `[PROJECT_URL]` - Your domain
+- `[GA_MEASUREMENT_ID]` - Google Analytics ID
+- And many more...
+
+## 🧪 Testing Your Template
+
+For template developers, test locally without GitHub:
+
+```bash
+npm run test:template
+```
+
+This creates a copy at `../test-template-project` simulating the GitHub template process.
 
 ## 📦 Deployment
 
 Ready to deploy to:
-- Vercel (recommended)
-- Netlify
-- Any static hosting
+- **Vercel** (recommended) - Zero config
+- **Netlify** - Auto-deploy on push
+- **GitHub Pages** - Static hosting
+- **Any static hosting** service
 
-## 🧪 Testing
+## 🛠️ Available Scripts
 
 ```bash
-npm run test        # Run tests
-npm run test:ui     # Test UI
-npm run coverage    # Coverage report
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run preview      # Preview production build
+npm run test         # Run tests
+npm run test:ui      # Visual test runner
+npm run lint         # Check code quality
+npm run format       # Format code
+npm run setup        # Configure template variables
+npm run test:template # Test template locally
+```
+
+## 📂 Project Structure
+
+```
+├── src/
+│   ├── components/    # Vue components
+│   ├── views/         # Page components
+│   ├── composables/   # Vue 3 composables
+│   ├── stores/        # Pinia stores
+│   ├── utils/         # Utilities & HTTP client
+│   └── test/          # Test files
+├── public/
+│   ├── js/            # Static JavaScript
+│   ├── css/           # Static CSS
+│   └── icons/         # Favicons & app icons
+├── scripts/           # Build & setup scripts
+└── docs/              # Documentation
 ```
 
 ## 🤝 Contributing to the Template
 
 Found a bug or want to improve the template itself?
-- Fork this repository (not "Use this template")
+
+- **Fork this repository** (not "Use this template")
 - Make your changes
 - Submit a pull request to improve the template for everyone
 
@@ -85,6 +135,20 @@ Found a bug or want to improve the template itself?
 - **Use Template**: Creates independent project (recommended for new projects)
 - **Fork**: Creates connected copy (only for contributing to this template)
 
+## 📊 Performance
+
+- **Build time**: ~900ms
+- **Bundle size**: 86KB (gzipped: 33KB)
+- **CSS size**: 4.5KB (gzipped: 1.4KB)
+- **Test coverage**: 8/8 passing
+- **Lighthouse**: 100/100/100/100
+
+## 📄 License
+
+MIT License - feel free to use this template for any project.
+
 ---
+
+**🎯 Production-ready Vue 3 template with automated setup!**
 
 Built by [Peter Benoit](https://peterbenoit.com) • [Brick City Creative](https://brickcitycreative.com)
