@@ -94,8 +94,8 @@ async function main() {
 		console.log(`3. ${colors.cyan}npm run setup${colors.reset} (test the setup script)`);
 		console.log(`4. ${colors.cyan}npm run dev${colors.reset} (test the development server)`);
 		console.log(`5. ${colors.cyan}npm run test${colors.reset} (test the unit tests)`);
-		console.log(`6. ${colors.cyan}rm -rf ../test-template-project${colors.reset} (remove the test directory when done)`);
 
+		console.log(`\n${colors.yellow}💡 Tip: run${colors.reset} ${colors.cyan}rm -rf ../test-template-project${colors.reset} ${colors.yellow}when finished to remove the test directory${colors.reset}`);
 		console.log(`\n${colors.yellow}💡 Tip: You can run this test multiple times to verify the template works correctly${colors.reset}`);
 
 	} catch (error) {
