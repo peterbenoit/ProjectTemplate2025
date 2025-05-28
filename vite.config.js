@@ -5,8 +5,8 @@ export default defineConfig({
 	plugins: [vue()],
 	root: '.',
 	publicDir: 'public',
-	// Set base URL for GitHub Pages deployment
-	base: process.env.NODE_ENV === 'production' ? '/[PROJECT_NAME]/' : '/',
+	// Fix base URL - Vercel doesn't need repository-specific paths
+	base: '/',
 	build: {
 		outDir: 'dist',
 		assetsDir: 'assets',

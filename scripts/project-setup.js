@@ -110,7 +110,7 @@ const filesToUpdate = [
 	{
 		path: 'vite.config.js',
 		replacements: [
-			{ search: /\[PROJECT_NAME\]/g, replace: 'PROJECT_NAME' },
+			{ search: /\/\[PROJECT_NAME\]\//g, replace: 'PROJECT_NAME' },
 		],
 	},
 	{
