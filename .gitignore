@@ -262,3 +262,6 @@ out/
 Thumbs.db
 ehthumbs.db
 Desktop.ini
+
+# Template testing
+../test-template-project
