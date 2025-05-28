@@ -1,6 +1,6 @@
 # Vue 3 Project Template 2025
 
-A modern, production-ready Vue 3 template. **This is a template repository** - when you use it, you get a completely independent copy with no connection to this original.
+A modern, production-ready Vue 3 template.
 
 ## 🚀 Quick Start
 
