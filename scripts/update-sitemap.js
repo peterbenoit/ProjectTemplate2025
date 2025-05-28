@@ -1,7 +1,11 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 /**
  * Updates the lastmod date in sitemap.xml to the current date
@@ -9,40 +13,33 @@ const path = require('path');
  */
 
 function updateSitemapDate() {
-	const sitemapPath = path.join(process.cwd(), 'sitemap.xml');
+	// Get the current date in YYYY-MM-DD format
+	const today = new Date().toISOString().split('T')[0];
 
-	// Check if sitemap.xml exists
-	if (!fs.existsSync(sitemapPath)) {
-		console.error('❌ sitemap.xml not found in current directory');
-		process.exit(1);
-	}
+	// Path to sitemap.xml
+	const sitemapPath = path.join(__dirname, '..', 'sitemap.xml');
 
 	try {
-		// Read the current sitemap
-		const sitemapContent = fs.readFileSync(sitemapPath, 'utf8');
+		// Read the sitemap file
+		let sitemap = fs.readFileSync(sitemapPath, 'utf8');
 
-		// Get current date in YYYY-MM-DD format
-		const currentDate = new Date().toISOString().split('T')[0];
-
-		// Update lastmod dates using regex
-		const updatedContent = sitemapContent.replace(
+		// Update the lastmod date
+		sitemap = sitemap.replace(
 			/<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/g,
-			`<lastmod>${currentDate}</lastmod>`
+			`<lastmod>${today}</lastmod>`
 		);
 
-		// Write the updated content back
-		fs.writeFileSync(sitemapPath, updatedContent, 'utf8');
+		// Write the updated sitemap back
+		fs.writeFileSync(sitemapPath, sitemap);
 
-		console.log(`✅ Sitemap updated with date: ${currentDate}`);
+		console.log(`✅ Sitemap updated with date: ${today}`);
 	} catch (error) {
 		console.error('❌ Error updating sitemap:', error.message);
 		process.exit(1);
 	}
 }
 
-// Run the script if called directly
-if (require.main === module) {
-	updateSitemapDate();
-}
+// Run the script (ES module version)
+updateSitemapDate();
 
-module.exports = updateSitemapDate;
+export default updateSitemapDate;
