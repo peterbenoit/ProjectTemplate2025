@@ -119,6 +119,14 @@ const filesToUpdate = [
 			{ search: /\[PROJECT_URL\]/g, replace: 'PROJECT_URL' },
 		],
 	},
+	{
+		path: 'src/views/Home.vue',
+		replacements: [
+			{ search: /\[PROJECT_NAME\]/g, replace: 'PROJECT_NAME' },
+			{ search: /\[PROJECT_DESCRIPTION\]/g, replace: 'PROJECT_DESCRIPTION' },
+			{ search: /\[PROJECT_REPO\]/g, replace: 'PROJECT_REPO' },
+		],
+	},
 ];
 
 async function main() {
