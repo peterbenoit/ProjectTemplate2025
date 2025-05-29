@@ -1,29 +1,43 @@
 <template>
-	<div class="home">
+	<div class="min-h-screen bg-base-100">
 		<AppHeader />
-		<main class="main-content">
-			<section class="hero">
-				<h1>{{ title }}</h1>
-				<p>{{ description }}</p>
+		<main class="container mx-auto px-4 py-8">
+			<section class="hero min-h-[60vh] flex items-center justify-center">
+				<div class="hero-content text-center animate-fade-in">
+					<div class="max-w-md">
+						<h1 class="text-5xl font-bold text-base-content mb-4">{{ title }}</h1>
+						<p class="text-lg text-base-content/70 mb-8">{{ description }}</p>
 
-				<div class="action-buttons">
-					<button class="cta-button primary" @click="incrementCounter">
-						Clicked {{ counter }} times
-					</button>
+						<div class="flex flex-col sm:flex-row gap-4 justify-center">
+							<button class="btn btn-primary btn-lg" @click="incrementCounter">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+									stroke="currentColor">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+										d="M13 10V3L4 14h7v7l9-11h-7z" />
+								</svg>
+								Clicked {{ counter }} times
+							</button>
 
-					<a :href="deployUrl" target="_blank" rel="noopener noreferrer" class="cta-button deploy">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-							class="deploy-icon">
-							<path fill-rule="evenodd"
-								d="M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z"
-								clip-rule="evenodd"></path>
-						</svg>
-						Deploy to Vercel
-					</a>
+							<a :href="deployUrl" target="_blank" rel="noopener noreferrer"
+								class="btn btn-outline btn-lg">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+									class="w-5 h-5">
+									<path fill-rule="evenodd"
+										d="M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z"
+										clip-rule="evenodd"></path>
+								</svg>
+								Deploy to Vercel
+							</a>
+						</div>
+					</div>
 				</div>
 			</section>
 
-			<Counter :count="counter" @increment="incrementCounter" />
+			<section class="py-16">
+				<div class="max-w-2xl mx-auto">
+					<Counter :count="counter" @increment="incrementCounter" />
+				</div>
+			</section>
 		</main>
 	</div>
 </template>
@@ -45,8 +59,8 @@ export default {
 		Counter,
 	},
 	setup() {
-		const title = ref('ProjectTemplate2025');
-		const description = ref('A modern Vue + JavaScript project template');
+		const title = ref('[PROJECT_NAME]');
+		const description = ref('[PROJECT_DESCRIPTION]');
 
 		// Using a composable for counter logic
 		const { counter, incrementCounter } = useCounter();
@@ -73,91 +87,5 @@ export default {
 </script>
 
 <style scoped>
-.home {
-	padding: 2rem;
-}
-
-.main-content {
-	max-width: 1200px;
-	margin: 0 auto;
-}
-
-.hero {
-	text-align: center;
-	padding: 4rem 0;
-}
-
-.hero h1 {
-	font-size: 3rem;
-	margin-bottom: 1rem;
-	color: #2c3e50;
-}
-
-.hero p {
-	font-size: 1.2rem;
-	color: #7f8c8d;
-	margin-bottom: 2rem;
-}
-
-.action-buttons {
-	display: flex;
-	gap: 1rem;
-	justify-content: center;
-	flex-wrap: wrap;
-	margin-top: 2rem;
-}
-
-.cta-button {
-	border: none;
-	padding: 1rem 2rem;
-	border-radius: 8px;
-	font-size: 1.1rem;
-	cursor: pointer;
-	transition: all 0.3s ease;
-	text-decoration: none;
-	display: inline-flex;
-	align-items: center;
-	gap: 0.5rem;
-	font-weight: 500;
-}
-
-.cta-button.primary {
-	background: #3498db;
-	color: white;
-}
-
-.cta-button.primary:hover {
-	background: #2980b9;
-	transform: translateY(-2px);
-}
-
-.cta-button.deploy {
-	background: #000;
-	color: white;
-	border: 2px solid #000;
-}
-
-.cta-button.deploy:hover {
-	background: #fff;
-	color: #000;
-	transform: translateY(-2px);
-}
-
-.deploy-icon {
-	width: 1.2em;
-	height: 1.2em;
-}
-
-@media (max-width: 768px) {
-	.action-buttons {
-		flex-direction: column;
-		align-items: center;
-	}
-
-	.cta-button {
-		width: 100%;
-		max-width: 280px;
-		justify-content: center;
-	}
-}
+/* No custom styles needed - using Tailwind/DaisyUI classes */
 </style>

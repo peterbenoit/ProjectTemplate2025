@@ -10,8 +10,8 @@ describe('Counter Component', () => {
 			},
 		});
 
-		expect(wrapper.find('.count-display').text()).toBe('5');
-		expect(wrapper.find('h3').text()).toBe('Counter Component');
+		expect(wrapper.find('.stat-value').text()).toBe('5');
+		expect(wrapper.find('.card-title').text()).toBe('Counter Component');
 	});
 
 	it('emits increment event when button is clicked', async () => {
@@ -21,7 +21,7 @@ describe('Counter Component', () => {
 			},
 		});
 
-		await wrapper.find('.increment-btn').trigger('click');
+		await wrapper.find('.btn-primary').trigger('click');
 
 		expect(wrapper.emitted()).toHaveProperty('increment');
 		expect(wrapper.emitted().increment).toHaveLength(1);
@@ -35,6 +35,6 @@ describe('Counter Component', () => {
 			},
 		});
 
-		expect(wrapper.find('.count-display').text()).toBe(testCount.toString());
+		expect(wrapper.find('.stat-value').text()).toBe(testCount.toString());
 	});
 });

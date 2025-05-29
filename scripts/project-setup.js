@@ -127,6 +127,18 @@ const filesToUpdate = [
 			{ search: /\[PROJECT_REPO\]/g, replace: 'PROJECT_REPO' },
 		],
 	},
+	{
+		path: 'tailwind.config.js',
+		replacements: [
+			{ search: /#3b82f6/g, replace: 'HEX_THEME_COLORS' },
+		],
+	},
+	{
+		path: 'src/components/Header.vue',
+		replacements: [
+			{ search: /\[PROJECT_NAME\]/g, replace: 'PROJECT_NAME' },
+		],
+	},
 ];
 
 async function main() {

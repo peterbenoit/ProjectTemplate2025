@@ -265,3 +265,13 @@ Desktop.ini
 
 # Template testing
 ../test-template-project
+
+# Tailwind/PostCSS generated files (if any)
+.postcss-cache/
+
+# Vite specific
+.vite/
+
+# Build analysis
+stats.html
+bundle-report.html

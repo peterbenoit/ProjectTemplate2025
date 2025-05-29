@@ -1,10 +1,25 @@
 <template>
-	<div class="counter">
-		<h3>Counter Component</h3>
-		<p>
-			Current count: <span class="count-display">{{ count }}</span>
-		</p>
-		<button class="increment-btn" @click="handleIncrement">Increment</button>
+	<div class="card bg-base-200 shadow-xl">
+		<div class="card-body text-center">
+			<h2 class="card-title justify-center text-2xl mb-4">Counter Component</h2>
+			<div class="stats shadow bg-base-100">
+				<div class="stat">
+					<div class="stat-title">Current Count</div>
+					<div class="stat-value text-primary">{{ count }}</div>
+					<div class="stat-desc">Click the button to increment</div>
+				</div>
+			</div>
+			<div class="card-actions justify-center mt-6">
+				<button class="btn btn-primary btn-wide" @click="handleIncrement">
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24"
+						stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+							d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+					</svg>
+					Increment Counter
+				</button>
+			</div>
+		</div>
 	</div>
 </template>
 
@@ -39,38 +54,5 @@ export default {
 </script>
 
 <style scoped>
-.counter {
-	background: #f8f9fa;
-	border: 1px solid #e9ecef;
-	border-radius: 8px;
-	padding: 1.5rem;
-	margin: 2rem 0;
-	text-align: center;
-}
-
-.counter h3 {
-	margin-top: 0;
-	color: #495057;
-}
-
-.count-display {
-	font-weight: bold;
-	color: #007bff;
-	font-size: 1.2rem;
-}
-
-.increment-btn {
-	background: #28a745;
-	color: white;
-	border: none;
-	padding: 0.5rem 1rem;
-	border-radius: 4px;
-	cursor: pointer;
-	margin-top: 1rem;
-	transition: background 0.3s ease;
-}
-
-.increment-btn:hover {
-	background: #218838;
-}
+/* No custom styles needed - using DaisyUI classes */
 </style>
