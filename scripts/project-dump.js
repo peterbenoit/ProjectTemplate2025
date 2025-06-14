@@ -19,6 +19,7 @@ if (fs.existsSync(gitignorePath)) {
 }
 
 ig.add('.git'); // Ignore the .git directory itself
+ig.add('.gitignore'); // Ignore the .gitignore file itself
 ig.add('*.ico'); // Ignore .icon files
 ig.add('*.png'); // Ignore .png files
 ig.add('*.jpg'); // Ignore .jpg files
@@ -58,6 +59,9 @@ ig.add('.env.production');
 ig.add('.vscode'); // Ignore VSCode project settings
 ig.add('.idea'); // Ignore JetBrains IDE settings
 ig.add('*.log'); // Ignore all .log files
+ig.add('*.sh'); // Ignore all .sh files
+ig.add('*.bat'); // Ignore all .bat files
+ig.add('*.cmd'); // Ignore all .cmd files
 
 // Function to recursively get directory structure and file contents
 function getDirectoryStructure(dir, baseDir = dir) {
