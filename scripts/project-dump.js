@@ -37,6 +37,7 @@ ig.add('LICENSE'); // Ignore the LICENSE file
 ig.add('package-lock.json'); // Ignore the package-lock.json file
 ig.add('node_modules'); // Ignore the node_modules directory
 ig.add('.next'); // Ignore the .next directory
+ig.add('.husky'); // Ignore the .husky directory
 ig.add('.vercel'); // Ignore the .vercel directory
 ig.add('fonts'); // Ignore fonts directory
 ig.add('webfonts'); // Ignore webfonts directory
