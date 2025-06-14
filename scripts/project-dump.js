@@ -32,6 +32,7 @@ ig.add('*.webp'); // Ignore .webp files
 ig.add('.DS_Store'); // Ignore .DS_Store files
 ig.add('project-structure.json'); // Ignore the output file itself
 ig.add('project-dump.js'); // Ignore this script itself
+ig.add('project-dump.cjs'); // Ignore this script itself
 ig.add('docs'); // Ignore the docs directory
 ig.add('README.md'); // Ignore the README file
 ig.add('LICENSE'); // Ignore the LICENSE file
